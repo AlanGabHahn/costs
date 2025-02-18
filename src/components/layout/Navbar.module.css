@@ -20,3 +20,8 @@
 .item a:hover {
     color: #FFBB33;
 }
+
+.item .active { 
+    color: #FFBB33;
+    font-weight: bold;
+}
