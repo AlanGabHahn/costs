@@ -2,7 +2,7 @@
   "projects": [
     {
       "id": "1",
-      "name": "Alan Gabriel de Oliveira Hahn",
+      "name": "PROJETO 1",
       "budget": "3000",
       "category": {
         "id": "4",
@@ -12,67 +12,34 @@
       "services": []
     },
     {
-      "id": "8a62",
-      "name": "aaaaa",
+      "id": "2",
+      "name": "PROJETO 2",
       "budget": "232",
       "category": {
         "id": "2",
-        "name": "Mobile Apps"
+        "name": "Design"
       },
       "cost": 0,
       "services": []
     },
     {
-      "id": "3cf5",
+      "id": "3",
       "category": {
         "id": "2",
-        "name": "Mobile Apps"
+        "name": "Design"
       },
       "budget": "8000",
-      "name": "Testando",
+      "name": "PROJETO 3",
       "cost": 0,
       "services": []
     },
     {
-      "id": "dccf",
-      "name": "Testando",
+      "id": "4",
+      "name": "PROJETO 4",
       "budget": "350",
       "category": {
         "id": "3",
-        "name": "Game Development"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "3c27",
-      "name": "aaaaa",
-      "budget": "333",
-      "category": {
-        "id": "1",
-        "name": "Web Design"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "dbf6",
-      "name": "Testando",
-      "budget": "33",
-      "category": {
-        "id": "1",
-        "name": "Web Design"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "bd74",
-      "name": "Testando",
-      "budget": "4",
-      "category": {
-        "id": "3",
-        "name": "Game Development"
+        "name": "Desenvolvimento"
       },
       "cost": 0,
       "services": []
@@ -81,15 +48,15 @@
   "categories": [
     {
       "id": "1",
-      "name": "Web Design"
+      "name": "Infra"
     },
     {
       "id": "2",
-      "name": "Mobile Apps"
+      "name": "Design"
     },
     {
       "id": "3",
-      "name": "Game Development"
+      "name": "Desenvolvimento"
     },
     {
       "id": "4",
