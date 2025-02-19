@@ -10,50 +10,6 @@
       },
       "cost": 0,
       "services": []
-    },
-    {
-      "id": "2",
-      "name": "PROJETO 2",
-      "budget": "232",
-      "category": {
-        "id": "2",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "3",
-      "category": {
-        "id": "2",
-        "name": "Design"
-      },
-      "budget": "8000",
-      "name": "PROJETO 3",
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "4",
-      "name": "PROJETO 4",
-      "budget": "350",
-      "category": {
-        "id": "3",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "878f",
-      "name": "Projeto 5",
-      "budget": "3333",
-      "category": {
-        "id": "3",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
     }
   ],
   "categories": [

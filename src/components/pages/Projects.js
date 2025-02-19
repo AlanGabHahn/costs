@@ -9,10 +9,13 @@ import ProjectCard from "../project/ProjectCard";
 
 import styles from './Projects.module.css';
 
+const url = 'http://localhost:5000/projects';
+
 const Projects = () => {
 
     const [projects, setProjects] = useState([]);
     const [removeLoading, setRemoveLoading] = useState(false);
+    const [projectMessage, setProjectMessage] = useState('');
 
     const location = useLocation();
 
@@ -23,9 +26,9 @@ const Projects = () => {
     }
 
     useEffect(() => {
-        //timeout só para simular o loading da página
+        //timeout só para simular o loading da página em uma requisição real não é necessário
         // setTimeout(() => { 
-            fetch('http://localhost:5000/projects', {
+            fetch(url, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,6 +43,21 @@ const Projects = () => {
         // }, 3000);
     }, []);
 
+    function removeProject(id) {
+        fetch(url+`/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((res) => res.json())
+        .then(() => {
+            setProjects(projects.filter(project => project.id !== id));
+            setProjectMessage('Projeto removido com sucesso!');
+        })
+        .catch((err) => console.log(err));
+    }
+
     return (
         <div className={styles.project_container}>
             <div className={styles.title_container}>
@@ -47,6 +65,7 @@ const Projects = () => {
                 <LinkButton to="/newproject" text="Novo Projeto" />
             </div>
             {message && <Message type="success" msg={message}/>}
+            {projectMessage && <Message type="success" msg={projectMessage}/>}
             <Container customClass="start">
                 {projects.length > 0 && projects.map((project) => (
                     <ProjectCard 
@@ -55,6 +74,7 @@ const Projects = () => {
                         budget={project.budget} 
                         category={project.category.name}
                         key={project.id}
+                        handleRemove={removeProject}
                     />
                 ))}
                 {!removeLoading && <Loading />}
