@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 
 import Loading from "../layout/Loading";
 import Container from "../layout/Container";
+import Message from "../layout/Message";
+import ProjectForm from "../project/ProjectForm";
 
 import styles from "./Project.module.css";
 
@@ -12,6 +14,8 @@ const Project = () => {
     
     const [project, setProject] = useState([]);
     const [showProjectForm, setShowProjectForm] = useState(false);
+    const [message, setMessage] = useState();
+    const [type, setType] = useState();
 
     useEffect(() => {
     //    setTimeout(() => {
@@ -33,6 +37,30 @@ const Project = () => {
         setShowProjectForm(!showProjectForm);
     }
 
+    function editPost(project) { 
+        if (project.budget < project.cost) {
+            setMessage('O orçamento não pode ser inferior ao custo.');
+            setType('error');
+            return;
+        }
+
+        fetch(`http://localhost:5000/projects/${project.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(project)
+        })
+       .then(response => response.json())
+       .then((data) => {
+            setProject(data);
+            setShowProjectForm(false);
+            setMessage('Projeto atualizado!');
+            setType('success');
+       })
+       .catch(err => console.log(err));
+    }
+
     return (
 
         <>
@@ -40,6 +68,7 @@ const Project = () => {
             (
                 <div className={styles.project_details}>
                     <Container customClass="column">
+                        {message && <Message type={type} msg={message} />}
                         <div className={styles.details_container}>
                             <h1>Projeto: {project.name}</h1>
                             <button onClick={toggleProjectForm} className={styles.btn}>
@@ -59,7 +88,11 @@ const Project = () => {
                                 </div>
                             ) : (
                                 <div className={styles.project_info}>
-                                    <p>form</p>
+                                    <ProjectForm 
+                                        handleSubmit={editPost} 
+                                        btnText="Concluir Edição"
+                                        projectData={project}
+                                    />
                                 </div>
                             )}
                         </div>
