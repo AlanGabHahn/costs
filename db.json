@@ -19,8 +19,33 @@
         "id": "3",
         "name": "Desenvolvimento"
       },
-      "cost": 0,
-      "services": []
+      "cost": 53,
+      "services": [
+        {
+          "name": "Alan Gabriel de Oliveira Hahn",
+          "cost": "44",
+          "description": "aaaaaaaa",
+          "id": "c8d0e37a-8fdd-403b-823e-1065dc66c8c0"
+        },
+        {
+          "name": "Testando",
+          "cost": "3",
+          "description": "aaaaaaaa",
+          "id": "17f6dbed-99d7-42a8-95b2-68b558c8ccac"
+        },
+        {
+          "name": "Testando",
+          "cost": "3",
+          "description": "aaaaa",
+          "id": "63223eb4-12c6-48b3-8818-be9cd7cdfc8b"
+        },
+        {
+          "name": "Testando",
+          "cost": "3",
+          "description": "aaaaaaaa",
+          "id": "53ffd559-8140-4194-93b7-9875924e4468"
+        }
+      ]
     }
   ],
   "categories": [
